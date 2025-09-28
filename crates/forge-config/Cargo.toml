@@ -15,3 +15,7 @@ toml.workspace = true
 anyhow.workspace = true
 thiserror.workspace = true
 config.workspace = true
+
+# CUE engine integration
+cuengine = { git = "https://github.com/cuenv/cuenv.git", package = "cuengine" }
+tokio.workspace = true
