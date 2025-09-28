@@ -30,7 +30,8 @@ A modern development project supporting both Rust and Bun/TypeScript development
 
 3. **Verify the setup**:
    ```bash
-   hello  # Welcome message
+   ./verify-setup.sh  # Run verification script
+   hello              # Welcome message (inside devenv shell)
    ```
 
 ## Development
