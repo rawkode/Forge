@@ -28,9 +28,7 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
 
     - name: Setup devenv
-      uses: cachix/devenv-action@v1
-      with:
-        devenv-url: https://install.devenv.sh/latest
+      uses: DeterminateSystems/devenv-action@v1
 
     - name: Validate devenv configuration
       run: |
@@ -87,9 +85,7 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
 
     - name: Setup devenv
-      uses: cachix/devenv-action@v1
-      with:
-        devenv-url: https://install.devenv.sh/latest
+      uses: DeterminateSystems/devenv-action@v1
 
     - name: Initialize development environment
       run: |
