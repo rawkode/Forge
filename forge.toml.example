@@ -1,0 +1,41 @@
+# Forge Configuration Example
+# Copy this file to forge.toml and customize for your deployment
+
+[auth]
+oidc_issuer = "https://accounts.google.com"
+oidc_client_id = "your-client-id"
+oidc_client_secret = "your-client-secret"
+jwt_secret = "your-jwt-secret-change-in-production"
+jwt_expiry_hours = 24
+
+[storage]
+database_url = "sqlite:forge.db"
+max_connections = 10
+backup_interval_hours = 6
+
+[vcs]
+repositories_root = "./repositories"
+jj_binary_path = "jj"
+max_push_size_mb = 200
+max_file_size_mb = 100
+
+[search]
+index_path = "./search_index"
+max_results = 100
+refresh_interval_seconds = 300
+
+[policy]
+policy_store_path = "./policies"
+evaluation_timeout_ms = 100
+
+[server]
+request_timeout_seconds = 30
+max_request_size_mb = 100
+cors_origins = ["http://localhost:3000"]
+
+# Optional TLS configuration with ACME
+# [tls]
+# acme_directory = "https://acme-v02.api.letsencrypt.org/directory"
+# acme_email = "your-email@example.com"
+# domains = ["forge.example.com"]
+# cache_dir = "./acme_cache"

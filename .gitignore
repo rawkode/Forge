@@ -1,0 +1,49 @@
+# Rust
+/target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
+
+# Configuration
+forge.toml
+*.local.toml
+
+# Database
+*.db
+*.db-*
+
+# Search index
+/search_index/
+
+# Repositories
+/repositories/
+
+# ACME cache
+/acme_cache/
+
+# Policies
+/policies/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+/static/dist/
+/dist/
+
+# Node.js (if using for frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
