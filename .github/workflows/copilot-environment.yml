@@ -24,20 +24,21 @@ jobs:
 
     - name: Install Nix
       uses: cachix/install-nix-action@v27
-
-    - name: Install devenv.sh
-      run: nix profile install nixpkgs#devenv
-
-    - name: Cache devenv
-      uses: actions/cache@v4
       with:
-        path: |
-          ~/.cache/devenv
-          .devenv
-        key: devenv-${{ runner.os }}-${{ hashFiles('devenv.nix', 'devenv.yaml') }}
+        enable_kvm: true
+
+    - name: Enable Nix flakes
+      run: |
+        mkdir -p ~/.config/nix
+        echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+
+    - name: Install devenv
+      run: |
+        nix profile install --accept-flake-config github:cachix/devenv/latest
 
     - name: Build devenv environment
-      run: devenv shell --command echo "Environment built"
+      run: |
+        devenv shell --command true
 
     - name: Validate devenv configuration
       run: |
@@ -90,20 +91,21 @@ jobs:
 
     - name: Install Nix
       uses: cachix/install-nix-action@v27
-
-    - name: Install devenv.sh
-      run: nix profile install nixpkgs#devenv
-
-    - name: Cache devenv
-      uses: actions/cache@v4
       with:
-        path: |
-          ~/.cache/devenv
-          .devenv
-        key: devenv-${{ runner.os }}-${{ hashFiles('devenv.nix', 'devenv.yaml') }}
+        enable_kvm: true
+
+    - name: Enable Nix flakes
+      run: |
+        mkdir -p ~/.config/nix
+        echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+
+    - name: Install devenv
+      run: |
+        nix profile install --accept-flake-config github:cachix/devenv/latest
 
     - name: Build devenv environment
-      run: devenv shell --command echo "Environment built"
+      run: |
+        devenv shell --command true
 
     - name: Initialize development environment
       run: |
