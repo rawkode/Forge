@@ -8,5 +8,5 @@ use crate::server::AppState;
 pub fn create_static_router() -> Router<AppState> {
     // In production, static files should be served by a CDN or reverse proxy
     // This is just for development
-    Router::new().nest_service("/", ServeDir::new("static"))
+    Router::new().nest_service("/assets", ServeDir::new("static"))
 }
