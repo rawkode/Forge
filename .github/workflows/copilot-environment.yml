@@ -25,8 +25,8 @@ jobs:
     - name: Install Nix
       uses: DeterminateSystems/nix-installer-action@v14
 
-    - name: Setup devenv
-      uses: cachix/devenv-action@v1.1.0
+    - name: Install devenv.sh
+      run: nix profile install nixpkgs#devenv
 
     - name: Validate devenv configuration
       run: |
@@ -80,8 +80,8 @@ jobs:
     - name: Install Nix
       uses: DeterminateSystems/nix-installer-action@v14
 
-    - name: Setup devenv
-      uses: cachix/devenv-action@v1.1.0
+    - name: Install devenv.sh
+      run: nix profile install nixpkgs#devenv
 
     - name: Initialize development environment
       run: |
